@@ -55,9 +55,10 @@ lobsters %>%
 
 # group_by multiple variables:
 
-lobsters %>%
+lobsterstable=lobsters %>%
   group_by(site, year) %>%
-  summarise(count_by_siteyear =  n())
+  summarise(count_by_siteyear =  n()) %>%
+  print(n = 40)
 
 
 # summarise multiple variables
@@ -95,7 +96,7 @@ siteyear_summary <- lobsters %>%
 # R we can simply update the filename when reading in the data and then rerun 
 # the exact same functions:
 
-lobsters <- read_excel(here("data/lobsters2.xlsx"), skip=4)
+lobsters2 <- read_excel(here("data/lobsters2.xlsx"), skip=4)
 summary(lobsters)
 
 siteyear_summary <- lobsters %>%
